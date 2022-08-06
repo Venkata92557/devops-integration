@@ -1,11 +1,12 @@
 node{
+
             stage('SCM Checkout'){
             git 'https://github.com/Venkata92557/SpringBoot-CICDPIpeline'
              }
              stage('Compile-Package'){
+            def mvnHome = 'maven3.6.3'
 
-             def mvnHome = tool name: 'maven3.6.3',type: 'maven'
-             bat "${mvnHome}/mvn clean install"
+             bat 'mvn clean install'
 
 
              }
