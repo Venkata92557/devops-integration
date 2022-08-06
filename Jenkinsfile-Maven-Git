@@ -1,20 +1,13 @@
-pipeline{
-    agent any
-    tools{
-        maven 'maven3.6.3'
-    }
-        stages{
+node{
+            stage('SCM Checkout'){
+            git 'https://github.com/Venkata92557/SpringBoot-CICDPIpeline'
+             }
+             stage('Compile-Package'){
 
-            stage('Checkout SCM'){
-                steps{
-                  checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Venkata92557/devops-integration']]])
+             def mvnHome = tool name: 'maven3.6.3',type: 'maven'
 
-                }
-            }
-             stage('Build Maven Project'){
-             steps{
              bat 'mvn clean install'
+
              }
-             }
-        }
-    }
+
+      }
