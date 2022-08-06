@@ -5,14 +5,16 @@ pipeline{
     }
         stages{
 
-            stage('Build Maven Project'){
+            stage('Checkout SCM'){
                 steps{
                   checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Venkata92557/devops-integration']]])
 
                 }
             }
              stage('Build Maven Project'){
+             steps{
              bat 'mvn clean install'
+             }
              }
         }
     }
