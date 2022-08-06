@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ReportingCommon" />
+        <module name="ReportingEngineEAR" />
         <module name="devops-integration" />
+        <module name="ReportingEngineEJB" />
+        <module name="ReportingEngineWeb" />
       </profile>
     </annotationProcessing>
   </component>
