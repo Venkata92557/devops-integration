@@ -5,8 +5,8 @@ node{
              stage('Compile-Package'){
 
              def mvnHome = tool name: 'maven3.6.3',type: 'maven'
+             bat "${mvnHome}/bin/mvn clean install"
 
-             bat 'mvn clean install'
 
              }
 
