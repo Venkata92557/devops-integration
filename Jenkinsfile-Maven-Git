@@ -3,8 +3,11 @@ node{
             git 'https://github.com/Venkata92557/SpringBoot-CICDPIpeline'
              }
              stage('Compile-Package'){
+             /*
             def mvnHome = tool name: 'maven3.6.3',type: 'maven'
              bat "${mvnHome}/bin/mvn package"
+             */
+             bat mvn clean install
 
              }
 
